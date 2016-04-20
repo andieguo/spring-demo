@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+  <persistence-unit name="db_commonweb" transaction-type="RESOURCE_LOCAL">
+   
+      <properties>
+      	 <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+		<property name="hibernate.max_fetch_depth" value="3"/>
+		<property name="hibernate.hbm2ddl.auto" value="update"/>
+		<property name="hibernate.show_sql" value="true"/>
+         
+		<!-- hibernate的proxool连接池配置（需要jar包：proxool.jar） -->  
+		<property name="hibernate.connection.provider_class" value="org.hibernate.connection.ProxoolConnectionProvider"/>  
+		<property name="hibernate.proxool.pool_alias" value="SpringDemoPool"/>  
+		<property name="hibernate.proxool.xml" value="proxool.xml"/>  
+      </properties>
+  </persistence-unit>
+</persistence>
